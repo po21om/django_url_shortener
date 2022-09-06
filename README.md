@@ -1,5 +1,5 @@
 # django_url_shortener
-This is a simple django url shortener aka alias generator.
+This is a simple django url shortener aka alias generator app.
 
 ## Requirements
 - Python 3
@@ -7,8 +7,8 @@ This is a simple django url shortener aka alias generator.
 
 ## Usage
 The app adds:
-- user accesible alias generator on main page (http://localhost:8000/)
-- muliple 8-char long aliases (ex. http://localhost:8000/Axn67tR3) which redirects to chosen sites.
+- user accessible alias generator on main page (http://localhost:8000/)
+- multiple 8-char long aliases (ex. http://localhost:8000/Axn67tR3) which redirects to chosen sites.
 
 ## Setup
 Start by coping shortener_app folder to the root of your django project.
@@ -31,7 +31,7 @@ INSTALLED_APPS = [
 Add those 2 urlpatterns:
 
 ```py
-from django.urls import include, path
+from shortener_app.views import redirect_view, AliasCreateView
 
 urlpatterns = [
     ...,
