@@ -1,0 +1,16 @@
+<html>
+    <body>
+        {% if request.GET.created_alias %}
+            <div>
+                Alias added! Aliased URL:
+                {% url 'redirect' alias=request.GET.created_alias as alias %}
+                <a href="{{ alias }}">{{ alias }}</a>
+            </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <table>{{ form }}</table>
+            <input type="submit" value="Generate alias">
+        </form>
+    </body>
+</html>
